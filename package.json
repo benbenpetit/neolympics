@@ -8,12 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true
-  },
   "dependencies": {
     "@next/font": "13.1.5",
     "@types/node": "18.11.18",
