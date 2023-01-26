@@ -1,10 +1,13 @@
-const Home = () => {
-  return (
-    <>
-      <h1 className='c-title'>Neolympics</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, tenetur!</p>
-    </>
-  )
+import { NextPage } from 'next'
+
+const Home: NextPage = () => {
+	return (
+		<>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, iusto!
+			</p>
+		</>
+	)
 }
 
 export default Home
