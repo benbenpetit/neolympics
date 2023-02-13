@@ -1,0 +1,10 @@
+.c-basebutton {
+  border-radius: 9999px;
+  padding: 1em 1.5em;
+  background-color: #000;
+  color: #fff;
+
+  &--full-width {
+    width: 100%;
+  }
+}

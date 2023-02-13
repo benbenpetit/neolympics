@@ -1,5 +1,6 @@
 {
   "arrowParens": "always",
+  "printWidth": 90,
   "bracketSpacing": true,
   "embeddedLanguageFormatting": "auto",
   "insertPragma": false,
@@ -10,5 +11,5 @@
   "tabWidth": 2,
   "useTabs": false,
   "trailingComma": "all",
-  "proseWrap": "never"
+  "proseWrap": "preserve"
 }
