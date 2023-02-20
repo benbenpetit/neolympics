@@ -25,7 +25,10 @@ const Board = ({ color = 0xffff00 }: Props) => {
       onPointerOut={(event) => setHover(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={new THREE.Color(color)} opacity={1} />
+      <meshStandardMaterial
+        color={hovered ? new THREE.Color('0x000000') : new THREE.Color(color)}
+        opacity={1}
+      />
       <ambientLight
         intensity={1}
         position={[0, 5, 0]}
