@@ -1,0 +1,23 @@
+.c-navbarbutton {
+  border: none;
+  outline: none;
+  background-color: black;
+  border-radius: 9999px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+
+  > img {
+    display: block;
+    height: auto;
+    width: auto;
+  }
+
+  > span {
+    color: white;
+  }
+}
