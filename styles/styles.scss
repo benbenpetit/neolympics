@@ -1,7 +1,25 @@
-@use 'settings';
-@use 'tools';
-@use 'generic';
-@use 'elements';
-@use 'objects';
-@use 'components';
-@use 'utilities';
+@use 'sass:math';
+
+@import 'tools/functions';
+
+@import 'settings/config';
+@import 'settings/config.colors';
+@import 'settings/config.eases';
+@import 'settings/config.variables';
+
+@import 'node_modules/normalize.css/normalize';
+@import 'generic/generic';
+
+@import 'elements/document';
+
+@import 'objects/wrapper';
+@import 'objects/container';
+
+@import 'components/heading';
+@import 'components/basebutton';
+@import 'components/button';
+@import 'components/podium-preview';
+@import 'components/difficulty-selector';
+
+@import 'utilities/flex';
+@import 'utilities/spacing';

@@ -1,0 +1,21 @@
+.o-container {
+  display: flex;
+  height: 100%;
+
+  &.--padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  &.--horizontal {
+    flex-direction: row;
+  }
+
+  &.--vertical {
+    flex-direction: column;
+  }
+
+  &__full-element {
+    flex: 1;
+  }
+}

@@ -1,0 +1,36 @@
+.c-podium-preview {
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+.c-score-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  &__image {
+    width: 28px;
+    height: 28px;
+  }
+
+  &__name {
+    font-size: #{rem(20px)};
+  }
+
+  &__score {
+    margin-left: 0.25rem;
+    font-weight: 500;
+    font-size: #{rem(20px)};
+  }
+}

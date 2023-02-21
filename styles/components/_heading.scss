@@ -1,0 +1,15 @@
+.c-heading {
+  line-height: 100%;
+
+  &.--uppercase {
+    text-transform: uppercase;
+  }
+
+  &.--giant {
+    font-size: var(--font-size-h1-giant);
+  }
+
+  &.--h1 {
+    font-size: var(--font-size-h1);
+  }
+}

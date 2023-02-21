@@ -1,0 +1,20 @@
+.o-wrapper {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+
+  &.--is-full-height {
+    min-height: 100vh;
+  }
+
+  &__inside {
+    flex: 1;
+    width: 100%;
+
+    .o-wrapper.--is-center & {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

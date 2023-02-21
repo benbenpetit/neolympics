@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 
 const SkateTrialPage: NextPage = () => {
-  return <div>Trial</div>
+  return <div></div>
 }
 
 export default SkateTrialPage
