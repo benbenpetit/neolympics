@@ -1,11 +1,13 @@
 .c-heading {
   line-height: 100%;
+  word-wrap: break-word;
 
   &.--uppercase {
     text-transform: uppercase;
   }
 
   &.--giant {
+    text-transform: uppercase;
     font-size: var(--font-size-h1-giant);
   }
 
