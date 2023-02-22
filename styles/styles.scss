@@ -21,14 +21,16 @@
 @import 'components/button';
 @import 'components/podium-preview';
 @import 'components/difficulty-selector';
-
-@import 'utilities/flex';
-@import 'utilities/spacing';
-
-@import 'layout/_trial';
 @import 'components/_progress-bar';
 @import 'components/timecode';
 @import 'components/score';
 @import 'components/trialfooter';
 @import 'components/navbarbutton';
 @import 'components/navbar';
+@import 'components/popup';
+
+@import 'utilities/flex';
+@import 'utilities/spacing';
+@import 'utilities/hidden';
+
+@import 'layout/_trial';
