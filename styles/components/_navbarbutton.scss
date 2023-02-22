@@ -10,6 +10,8 @@
   align-items: center;
   justify-content: center;
   width: auto;
+  transition: 0.2s all ease-in-out;
+  opacity: 0.7;
 
   > img {
     display: block;
@@ -19,5 +21,10 @@
 
   > span {
     color: white;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    opacity: 1;
   }
 }
