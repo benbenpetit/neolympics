@@ -1,0 +1,40 @@
+.c-button {
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #111111;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  &.--variant-primary {
+    background-color: #111111;
+    color: #ffffff;
+  }
+
+  &.--variant-secondary {
+    background-color: #ffffff;
+    color: #111111;
+  }
+
+  &.--variant-tertiary {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+  }
+
+  &.--full-width {
+    width: 100%;
+  }
+
+  &.--thick {
+    border-width: 5px;
+  }
+
+  &.--is-active {
+    border-color: #2b44ff;
+  }
+}
