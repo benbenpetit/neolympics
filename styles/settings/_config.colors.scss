@@ -1,1 +1,19 @@
 $color-primary: #02a85b;
+$color-blue: #2b44ff;
+$color-orange: #de7800;
+$color-red: #e44242;
+
+$sports-schemes: (
+  blue: (
+    primary: $color-blue,
+    secondary: darken($color-blue, 0.5),
+  ),
+  orange: (
+    primary: $color-orange,
+    secondary: darken($color-orange, 0.5),
+  ),
+  red: (
+    primary: $color-red,
+    secondary: darken($color-red, 0.5),
+  ),
+);

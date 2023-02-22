@@ -1,10 +1,8 @@
 .o-container {
   display: flex;
-  height: 100%;
 
   &.--padding {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 2rem;
   }
 
   &.--horizontal {
@@ -13,6 +11,10 @@
 
   &.--vertical {
     flex-direction: column;
+  }
+
+  &.--screen {
+    min-height: 100vh;
   }
 
   &__full-element {

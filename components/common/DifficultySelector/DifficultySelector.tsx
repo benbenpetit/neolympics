@@ -1,3 +1,4 @@
+import { GameContext, useGameContext } from '@/core/contexts/gameContext'
 import { IDifficulty } from '@/core/types/IDifficulty'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -9,14 +10,10 @@ interface Props {
 }
 
 const DifficultySelector: FC<Props> = ({ difficulties }) => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(0)
+  const { gameState, setGameState } = useGameContext(GameContext)
 
   const handleDifficultyClick = (index: number) => {
-    if (index === selectedIndex || index === selectedIndex) {
-      setSelectedIndex(null)
-    } else {
-      setSelectedIndex(index)
-    }
+    setGameState({ ...gameState, difficulty: index })
   }
 
   return (
@@ -26,14 +23,14 @@ const DifficultySelector: FC<Props> = ({ difficulties }) => {
           <li
             className={clsx(
               'c-difficulty-selector__illu || c-difficulty-illu',
-              index === selectedIndex && '--is-selected',
+              index === gameState.difficulty && '--is-selected',
             )}
             key={index}
           >
             <Button
               onClick={() => handleDifficultyClick(index)}
-              className='c-difficulty-illu__button'
-              active={index === selectedIndex}
+              className={clsx('c-difficulty-illu__button', `--theme-${difficulty.theme}`)}
+              active={index === gameState.difficulty}
               thick
             >
               Athlète niv.{index + 1}

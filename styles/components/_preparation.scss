@@ -1,0 +1,88 @@
+.c-preparation {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+
+  > * {
+    &:nth-child(1) {
+      grid-column: 1/8;
+    }
+
+    &:nth-child(2) {
+      grid-column: 8/13;
+    }
+  }
+
+  &__right {
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
+.c-preparation-preview {
+  position: relative;
+  flex: 1;
+
+  @each $label, $scheme in $sports-schemes {
+    &.--theme-#{$label} {
+      $colors: get-color-theme($scheme);
+
+      &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: nth($colors, 1);
+        transform-origin: bottom left;
+        transform: skewX(-10deg);
+        animation: transformIt 0.6s $ease-power4-out forwards;
+
+        @keyframes transformIt {
+          from {
+            opacity: 0.6;
+            transform: translateX(10%) skewX(-10deg);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0) skewX(-10deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__athlete {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(calc(-50% - 50px), -50%);
+    z-index: 1;
+    max-height: 70vh;
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+
+  &__pseudo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(0, -50%) rotate(-10deg);
+    border: 8px solid #000000;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    min-width: 16rem;
+    display: flex;
+    justify-content: center;
+
+    > span {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+  }
+}
