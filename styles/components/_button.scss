@@ -34,7 +34,14 @@
     border-width: 5px;
   }
 
-  &.--is-active {
-    border-color: #2b44ff;
+  @each $label, $scheme in $sports-schemes {
+    &.--theme-#{$label} {
+      $colors: get-color-theme($scheme);
+
+      &:hover,
+      &.--is-active {
+        border-color: nth($colors, 1);
+      }
+    }
   }
 }

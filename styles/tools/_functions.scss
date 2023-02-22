@@ -13,3 +13,7 @@
 
   @return math.div($size, $base) * 1rem;
 }
+
+@function get-color-theme($scheme) {
+  @return map-get($scheme, primary), map-get($scheme, secondary);
+}

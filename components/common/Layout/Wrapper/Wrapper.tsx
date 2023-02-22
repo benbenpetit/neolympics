@@ -5,12 +5,20 @@ interface Props {
   isCenter?: boolean
   col?: number
   fullHeight?: boolean
+  noPadding?: boolean
   children: ReactNode
   style?: CSSProperties
 }
 
-const Wrapper: FC<Props> = ({ isCenter, col = 12, fullHeight, children, style }) => {
-  const allWidth = 1240
+const Wrapper: FC<Props> = ({
+  isCenter,
+  col = 12,
+  fullHeight,
+  noPadding,
+  children,
+  style,
+}) => {
+  const allWidth = 1600
   const gapWidth = 16
   const nbCol = 12
   const colWidth = (allWidth - gapWidth * (nbCol - 1)) / nbCol
@@ -22,6 +30,7 @@ const Wrapper: FC<Props> = ({ isCenter, col = 12, fullHeight, children, style })
         'o-wrapper',
         isCenter && '--is-center',
         fullHeight && '--is-full-height',
+        noPadding && '--is-no-padding',
       )}
       style={{ ...style }}
     >
