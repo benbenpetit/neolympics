@@ -1,0 +1,44 @@
+.lock-screen-pattern {
+  background: peachpuff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 50vh;
+  width: 50vw;
+  &.is-correct {
+    .lock-screen-dot[data-selected='true'] {
+      fill: green;
+    }
+    .lock-screen-zone-dot[data-selected='true'] {
+      fill: rgba($color: green, $alpha: 0.5);
+    }
+    .lock-screen-line {
+      stroke: green;
+    }
+  }
+  &.is-not-correct {
+    .lock-screen-dot[data-selected='true'] {
+      fill: red;
+    }
+    .lock-screen-zone-dot[data-selected='true'] {
+      fill: rgba($color: red, $alpha: 0.5);
+    }
+    .lock-screen-line {
+      stroke: red;
+    }
+  }
+  .lock-screen-dot {
+    border-radius: 50%;
+    fill: black;
+  }
+  .lock-screen-zone-dot {
+    border-radius: 50%;
+    fill: rgba($color: #000000, $alpha: 0.5);
+  }
+  .lock-screen-line {
+    stroke: red;
+    stroke-width: 5px;
+  }
+}
