@@ -1,30 +1,40 @@
 .c-progress-bar {
   display: flex;
   position: relative;
-  height: 6px;
-  width: 300px;
-  margin-left: 50px;
-  margin-right: 50px;
+  height: 0.25rem;
+  width: 100%;
+  max-width: 22rem;
+  background-color: gray;
+  border-radius: 0.5rem;
 
-  &__blank-bar {
+  &__timecode {
     position: absolute;
-    background-color: white;
-    top: 0;
     left: 0;
-    right: 75%;
-    bottom: 0;
-    border-radius: 10px;
-    z-index: 10;
+    bottom: calc(100% + 1rem);
+    transform: translateX(-50%);
   }
 
-  &__filled-bar {
+  &__outside {
     position: absolute;
-    background-color: gray;
+    left: 0;
     top: 0;
-    left: 20%;
     right: 0;
     bottom: 0;
-    border-radius: 10px;
+    background-color: #333333;
+    border-radius: 9999px;
+    overflow: hidden;
+
+    &__inside {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      border-radius: 9999px;
+      transform-origin: center left;
+      transform: translate3d(-100%, 0, 0);
+    }
   }
 
   &__dots-container {
@@ -36,21 +46,22 @@
   position: absolute;
   z-index: 10;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   top: 0;
-  left: 0;
+  left: -0.5rem;
   right: 0;
   bottom: 0;
+  width: calc(100% + 1rem);
 
-  > span {
+  > .dot {
     flex-direction: row;
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 9999px;
     background-color: gray;
 
-    &:nth-child(1) {
+    &.--active {
       background-color: lightgreen;
     }
   }
