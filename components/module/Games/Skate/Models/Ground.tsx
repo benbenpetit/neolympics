@@ -7,7 +7,7 @@ interface Props {
   color?: THREE.ColorRepresentation
 }
 
-const Board = ({ color = 0xffff00 }: Props) => {
+const Ground = ({ color = 0xffff00 }: Props) => {
   const mesh = useRef<Mesh>(null)
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
@@ -26,4 +26,4 @@ const Board = ({ color = 0xffff00 }: Props) => {
   )
 }
 
-export default Board
+export default Ground

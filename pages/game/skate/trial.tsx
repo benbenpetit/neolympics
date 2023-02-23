@@ -1,13 +1,14 @@
 import Navbar from '@/components/common/Navbar/Navbar'
-import Board from '@/components/module/Games/Skate/Models/Board'
 import { Jump } from '@/components/module/Games/Skate/Models/Jump'
 import TrialFooter from '@/components/module/Games/Skate/TrialFooter'
 import { OrbitControls } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useThree } from '@react-three/fiber'
 import { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import Ground from '@/components/module/Games/Skate/Models/Ground'
+import Skate from '@/components/module/Games/Skate/Skate'
 
 const TrialPage: NextPage = () => {
   const [time, setTime] = useState(0)
@@ -27,13 +28,7 @@ const TrialPage: NextPage = () => {
     <div>
       <Navbar />
       <div className='o-container --vertical --screen'>
-        <Canvas>
-          <OrbitControls />
-          <directionalLight intensity={0.5} />
-          <ambientLight intensity={0.2} />
-          <Jump />
-          <Board />
-        </Canvas>
+        <Skate />
         <AnimatePresence>
           {shouldDraw() && (
             <motion.div
@@ -60,3 +55,6 @@ const TrialPage: NextPage = () => {
 }
 
 export default TrialPage
+function deg2rad(arg0: number): number {
+  throw new Error('Function not implemented.')
+}
