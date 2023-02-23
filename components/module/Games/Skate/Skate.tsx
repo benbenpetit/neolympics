@@ -12,7 +12,7 @@ interface Props {
 
 const Skate: FC<Props> = ({ playAnim }) => {
   return (
-    <Canvas style={{ height: '80vh' }} camera={{ position: [0, 2, 3] }}>
+    <Canvas style={{ height: '80vh' }} camera={{ position: [-2.3, 2, 1.4] }}>
       {/* <OrbitControls /> */}
       <directionalLight intensity={0.5} />
       <ambientLight intensity={0.2} />

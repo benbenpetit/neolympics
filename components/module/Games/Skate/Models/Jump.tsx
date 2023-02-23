@@ -9,16 +9,21 @@ import { useFrame } from '@react-three/fiber'
 
 export function Jump(props: any) {
   const group = useRef()
-  const { nodes, materials, animations }: any = useGLTF('/Anims3D/SkateAnimsV2.glb')
+  const { nodes, materials, animations }: any = useGLTF('/Anims3D/SkateAnims.glb')
   const { actions }: any = useAnimations(animations, group)
 
-  const startAnim = () => {
-    if (!actions) return
-    actions.Jump.play()
-  }
-
   useEffect(() => {
-    console.log(props?.playAnim)
+    actions.Jump.loop = 1
+    console.log(actions.Jump)
+    if (props?.playAnim) {
+      actions.Jump.play()
+      setTimeout(() => {
+        actions.Jump.stop()
+        actions.Staying.play()
+      }, 2200)
+    } else {
+      actions.Staying.play()
+    }
   }, [props?.playAnim])
 
   return (
@@ -38,4 +43,4 @@ export function Jump(props: any) {
   )
 }
 
-useGLTF.preload('/Anims3D/SkateAnimsV2.glb')
+useGLTF.preload('/Anims3D/SkateAnims.glb')

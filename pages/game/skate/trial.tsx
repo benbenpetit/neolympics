@@ -30,7 +30,7 @@ const TrialPage: NextPage = () => {
     if (isStop) {
       setTimeout(() => {
         setDisplayPattern(true)
-        setPlayAnim(true)
+        // setPlayAnim(true)
       }, 4000)
     } else {
       setDisplayPattern(false)
@@ -86,6 +86,7 @@ const TrialPage: NextPage = () => {
                         setIsPatternDone(true)
                         setPoints(23)
                         setIsStop(false)
+                        setPlayAnim(true)
                       }, 1000)
                     }
                   />

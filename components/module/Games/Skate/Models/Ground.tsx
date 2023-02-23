@@ -19,7 +19,7 @@ const Ground = ({ color = 0xffff00 }: Props) => {
   // })
 
   return (
-    <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, Math.PI, 0]} scale={[30, 30, 30]}>
+    <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, Math.PI, 0]} scale={[50, 50, 0]}>
       <planeBufferGeometry />
       <meshBasicMaterial attach='material' map={texture} toneMapped={false} />
     </mesh>
