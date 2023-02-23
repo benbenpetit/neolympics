@@ -11,10 +11,16 @@ export function Jump(props: any) {
   const group = useRef()
   const { nodes, materials, animations }: any = useGLTF('/Anims3D/SkateAnimsV2.glb')
   const { actions }: any = useAnimations(animations, group)
-  useEffect(() => {
-    console.log(actions)
+
+  const startAnim = () => {
+    if (!actions) return
     actions.Jump.play()
-  }, [animations])
+  }
+
+  useEffect(() => {
+    console.log(props?.playAnim)
+  }, [props?.playAnim])
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name='Scene'>

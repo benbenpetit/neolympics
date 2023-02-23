@@ -18,6 +18,7 @@ const TrialPage: NextPage = () => {
   const [displayPattern, setDisplayPattern] = useState(false)
   const [points, setPoints] = useState(0)
   const totalTime = 45
+  const [playAnim, setPlayAnim] = useState(false)
 
   useEffect(() => {
     if (time < totalTime && !isStop) {
@@ -29,6 +30,7 @@ const TrialPage: NextPage = () => {
     if (isStop) {
       setTimeout(() => {
         setDisplayPattern(true)
+        setPlayAnim(true)
       }, 4000)
     } else {
       setDisplayPattern(false)
@@ -48,7 +50,7 @@ const TrialPage: NextPage = () => {
     <div>
       <Navbar />
       <div className='o-container --vertical --screen'>
-        <Skate />
+        <Skate playAnim={playAnim} />
         <AnimatePresence>
           {shouldOpenModal() && (
             <motion.div
