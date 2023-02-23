@@ -1,14 +1,15 @@
 import clsx from 'clsx'
-import { useEffect, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 
 interface Props {
   numRows: number
   numCols: number
+  correctPattern: number[]
+  handleWin: Function
 }
 
-const PatternLock = ({ numRows, numCols }: Props) => {
+const PatternLock: FC<Props> = ({ numRows, numCols, correctPattern, handleWin }) => {
   const [selectedDots, setSelectedDots] = useState<number[]>([])
-  const [winingSelectedDots, setWiningSelectedDots] = useState<number[]>([0, 6, 1, 5])
   const [hasWon, setHasWon] = useState<boolean>(false)
   const [isDrawing, setIsDrawing] = useState<boolean>(false)
   const [startDot, setStartDot] = useState<number | null>(null)
@@ -64,8 +65,9 @@ const PatternLock = ({ numRows, numCols }: Props) => {
   }
 
   const checkIfWon = (patternToCheck: number[]) => {
-    if (areEqual(patternToCheck, winingSelectedDots)) {
+    if (areEqual(patternToCheck, correctPattern)) {
       setHasWon(true)
+      handleWin()
     } else {
       setHasWon(false)
     }
@@ -120,6 +122,7 @@ const PatternLock = ({ numRows, numCols }: Props) => {
         className={clsx('lock-screen-pattern', hasWon ? 'is-correct' : 'is-not-correct')}
         ref={patternRef}
         onMouseUp={handleDotMouseUp}
+        // onMouseLeave={handleDotMouseUp}
       >
         {selectedDots.map((dot, index) => {
           if (index < selectedDots.length - 1) {
@@ -185,9 +188,9 @@ const PatternLock = ({ numRows, numCols }: Props) => {
           })}
         </g>
       </svg>
-      <h2>Pattern à faire : {winingSelectedDots.join(',')}</h2>
+      {/* <h2>Pattern à faire : {winingSelectedDots.join(',')}</h2>
       <h2>Pattern fait : {selectedDots.join(',')}</h2>
-      <h2>Pattern resultat : {hasWon ? 'Gagné' : 'Perdu'}</h2>
+      <h2>Pattern resultat : {hasWon ? 'Gagné' : 'Perdu'}</h2> */}
     </div>
   )
 }

@@ -6,10 +6,11 @@ import { FC } from 'react'
 interface Props {
   time: number
   totalTime: number
+  points: number
   className?: string
 }
 
-const TrialFooter: FC<Props> = ({ time, totalTime, className }) => {
+const TrialFooter: FC<Props> = ({ time, totalTime, points, className }) => {
   return (
     <div className={clsx('c-trial-footer', className)}>
       <div className='c-trial-footer__progress'>
@@ -18,7 +19,7 @@ const TrialFooter: FC<Props> = ({ time, totalTime, className }) => {
           totalTime={totalTime}
           className='c-trial-footer__progess-bar'
         />
-        <Score className='c-trial-footer__score' />
+        <Score points={points} className='c-trial-footer__score' />
       </div>
     </div>
   )
