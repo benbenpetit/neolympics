@@ -1,7 +1,39 @@
-@use 'settings';
-@use 'tools';
-@use 'generic';
-@use 'elements';
-@use 'objects';
-@use 'components';
-@use 'utilities';
+@use 'sass:math';
+
+@import 'tools/functions';
+
+@import 'settings/config';
+@import 'settings/config.colors';
+@import 'settings/config.eases';
+@import 'settings/config.variables';
+
+@import 'node_modules/normalize.css/normalize';
+@import 'generic/generic';
+
+@import 'elements/document';
+
+@import 'layout/trial';
+
+@import 'objects/wrapper';
+@import 'objects/container';
+@import 'objects/image';
+
+@import 'components/heading';
+@import 'components/basebutton';
+@import 'components/button';
+@import 'components/podium-preview';
+@import 'components/difficulty-selector';
+@import 'components/progress-bar';
+@import 'components/timecode';
+@import 'components/score';
+@import 'components/trialfooter';
+@import 'components/navbarbutton';
+@import 'components/navbar';
+@import 'components/preparation';
+@import 'components/home';
+@import 'components/popup';
+@import 'components/pattern-lock';
+
+@import 'utilities/flex';
+@import 'utilities/spacing';
+@import 'utilities/hidden';

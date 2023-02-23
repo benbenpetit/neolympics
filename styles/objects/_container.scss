@@ -1,0 +1,23 @@
+.o-container {
+  display: flex;
+
+  &.--padding {
+    padding: 2rem;
+  }
+
+  &.--horizontal {
+    flex-direction: row;
+  }
+
+  &.--vertical {
+    flex-direction: column;
+  }
+
+  &.--screen {
+    min-height: 100vh;
+  }
+
+  &__full-element {
+    flex: 1;
+  }
+}

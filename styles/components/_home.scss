@@ -1,0 +1,14 @@
+.c-home {
+  background-image: url(/img/home-splash.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  min-height: 100vh;
+  color: #ffffff;
+  gap: 2rem;
+  text-align: center;
+
+  &__paragraph {
+    max-width: 32rem;
+    font-size: 1.25rem;
+  }
+}

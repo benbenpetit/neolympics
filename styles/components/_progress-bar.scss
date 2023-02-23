@@ -1,0 +1,57 @@
+.c-progress-bar {
+  display: flex;
+  position: relative;
+  height: 6px;
+  width: 300px;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  &__blank-bar {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 75%;
+    bottom: 0;
+    border-radius: 10px;
+    z-index: 10;
+  }
+
+  &__filled-bar {
+    position: absolute;
+    background-color: gray;
+    top: 0;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+  }
+
+  &__dots-container {
+    width: 100%;
+  }
+}
+
+.c-dots-container {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  > span {
+    flex-direction: row;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: gray;
+
+    &:nth-child(1) {
+      background-color: lightgreen;
+    }
+  }
+}
