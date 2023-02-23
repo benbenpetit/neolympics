@@ -1,6 +1,6 @@
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useLoader } from '@react-three/fiber'
 import { useRef, useState } from 'react'
-import type { Mesh } from 'three'
+import { DoubleSide, Mesh } from 'three'
 import * as THREE from 'three'
 
 interface Props {
@@ -12,28 +12,16 @@ const Board = ({ color = 0xffff00 }: Props) => {
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
 
-  useFrame(() => {
-    if (mesh.current) mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-  })
+  const texture = useLoader(THREE.TextureLoader, '/img/concrete-texture.jpg')
+
+  // useFrame(() => {
+  //   if (mesh.current) mesh.current.rotation.x = mesh.current.rotation.y += 0.01
+  // })
 
   return (
-    <mesh
-      ref={mesh}
-      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial
-        color={hovered ? new THREE.Color('0x000000') : new THREE.Color(color)}
-        opacity={1}
-      />
-      <ambientLight
-        intensity={1}
-        position={[0, 5, 0]}
-        color={new THREE.Color(0xffffff)}
-      />
+    <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, Math.PI, 0]} scale={[30, 30, 30]}>
+      <planeBufferGeometry />
+      <meshBasicMaterial attach='material' map={texture} toneMapped={false} />
     </mesh>
   )
 }
