@@ -7,9 +7,11 @@ import { IGame } from '@/core/types/IGame'
 import clsx from 'clsx'
 import { NextPage } from 'next'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 const SkatePreparationPage: NextPage = () => {
+  const router = useRouter()
   const [gameState, setGameState] = useState<IGame>({ difficulty: 0, score: 0 })
   const SKATE_DIFFICULTIES: IDifficulty[] = [
     {
@@ -48,7 +50,11 @@ const SkatePreparationPage: NextPage = () => {
             <DifficultySelector difficulties={SKATE_DIFFICULTIES} />
           </div>
           <div className='u-px-4 u-mt-2'>
-            <Button variant='primary' fullWidth onClick={() => console.log('start')}>
+            <Button
+              variant='primary'
+              fullWidth
+              onClick={() => router.push('/game/skate/trial')}
+            >
               <span>Commencer l'épreuve olympique</span>
             </Button>
             <Button

@@ -1,8 +1,8 @@
 .c-trial-footer {
-  background-color: black;
-  padding: 15px;
+  background-color: #000000;
+  padding: 1rem 3rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   .bg-container {
@@ -12,12 +12,14 @@
 
   &__progress {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 3rem 0;
   }
 
-  &__progress-bar {
-    margin-right: 30px;
-    margin-left: 30px;
+  &__score {
+    flex-shrink: 0;
   }
 }

@@ -3,12 +3,20 @@ import clsx from 'clsx'
 import { FC } from 'react'
 
 interface Props {
+  time: number
+  offsetLeft: string
   className?: string
 }
 
-const Timecode: FC<Props> = ({ className }) => {
+const Timecode: FC<Props> = ({ time = 0, offsetLeft = '0', className }) => {
+  const getLeadingZeroTime = (seconds: number) => {
+    const fixedSeconds = seconds.toFixed(1)
+
+    return fixedSeconds.length <= 3 ? `0${fixedSeconds}` : fixedSeconds
+  }
+
   return (
-    <div className={clsx('c-timecode', className)}>
+    <div className={clsx('c-timecode', className)} style={{ left: offsetLeft }}>
       <div className='c-timecode__wrapper'>
         <span className='c-timecode__picto'>
           <Image
@@ -19,7 +27,7 @@ const Timecode: FC<Props> = ({ className }) => {
             className='o-picto'
           />
         </span>
-        <span className='c-timecode__timer'>0:09</span>
+        <span className='c-timecode__timer'>{getLeadingZeroTime(time)}</span>
       </div>
       <div className='c-timecode__cursor'>
         <Image

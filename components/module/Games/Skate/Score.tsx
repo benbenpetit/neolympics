@@ -8,10 +8,8 @@ interface Props {
 const Score: FC<Props> = ({ className }) => {
   return (
     <div className={clsx('c-score', className)}>
-      <div className='c-score__label'>
-        <strong>SCORE</strong>
-      </div>
-      <div className='c-score__points'>100 pts</div>
+      <span className='c-score__label'>Score</span>
+      <span className='c-score__points'>100 pts</span>
     </div>
   )
 }

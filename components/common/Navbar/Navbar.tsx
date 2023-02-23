@@ -6,12 +6,14 @@ import volumeIcon from '@/public/img/sound-on.svg'
 import muteIcon from '@/public/img/sound-off.svg'
 import Popup from '@/components/common/Navbar/Popup'
 import Button from '@/components/common/Button/Button'
+import { useRouter } from 'next/router'
 
 interface Props {
   className?: string
 }
 
 const Navbar: FC<Props> = ({ className }) => {
+  const router = useRouter()
   const [isVolume, setIsVolume] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -24,7 +26,7 @@ const Navbar: FC<Props> = ({ className }) => {
   }
 
   const exitClick = () => {
-    console.log('EXIT')
+    router.replace('/')
     setIsModalOpen(false)
   }
 
