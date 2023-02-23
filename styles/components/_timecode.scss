@@ -1,0 +1,43 @@
+.c-timecode {
+  position: relative;
+  left: -100px;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__picto {
+    margin: 5px;
+    width: 14px;
+    height: 14px;
+
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__timer {
+    color: white;
+    margin: 2px;
+  }
+
+  &__cursor {
+    width: 15px;
+    height: 15px;
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

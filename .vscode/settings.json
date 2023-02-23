@@ -6,7 +6,7 @@
   "typescript.format.semicolons": "remove",
   "typescript.preferences.quoteStyle": "single",
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": false
   },
   "[ts]": {
     "editor.tabSize": 2
