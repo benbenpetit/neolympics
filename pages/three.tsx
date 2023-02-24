@@ -5,9 +5,7 @@ import { NextPage } from 'next'
 const ThreePage: NextPage = () => {
   return (
     <div>
-      <CanvasLayout>
-        <Skate />
-      </CanvasLayout>
+      <CanvasLayout>{/* <Skate /> */}</CanvasLayout>
     </div>
   )
 }
